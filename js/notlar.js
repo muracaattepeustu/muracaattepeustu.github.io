@@ -35,7 +35,7 @@ const renderUser = doc => {
     editModal.classList.add('modal-show');
 
     id = doc.id;
-    editModalForm.not.value = doc.data().not;
+    editModalForm.not_icerik.value = doc.data().not_icerik;
     editModalForm.not_saati.value = doc.data().not_saati;
  
   });
@@ -68,7 +68,7 @@ const renderUser = doc => {
 btnAdd.addEventListener('click', () => {
   addModal.classList.add('modal-show');
 
-  addModalForm.not.value = '';
+  addModalForm.not_icerik.value = '';
   addModalForm.not_saati.value = '';
 });
 
@@ -143,7 +143,7 @@ db.collection('notlar').onSnapshot(snapshot => {
 addModalForm.addEventListener('submit', e => {
   e.preventDefault();
   db.collection('notlar').add({
-    not: addModalForm.not.value,
+    not_icerik: addModalForm.not_icerik.value,
     not_saati: addModalForm.not_saati.value,
   });
   modalWrapper.classList.remove('modal-show');
@@ -153,7 +153,7 @@ addModalForm.addEventListener('submit', e => {
 editModalForm.addEventListener('submit', e => {
   e.preventDefault();
   db.collection('notlar').doc(id).update({ 
-    not: editModalForm.not.value,
+    not_icerik: editModalForm.not_icerik.value,
     not_saati: editModalForm.not_saati.value,
   });
   editModal.classList.remove('modal-show');
