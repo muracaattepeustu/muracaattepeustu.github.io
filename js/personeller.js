@@ -118,11 +118,19 @@ db.collection('personeller').orderBy("personel_durum", "asc").get().then(querySn
 */ 
 
 
+/*
 
+db.collection("personeller").orderBy("sira", "asc").onSnapshot(snapshot => {
+
+yedek--
+db.collection('personeller').orderBy("personel_durum", "asc").onSnapshot(snapshot => {
+
+*/
 
 // Real time listener
 
-db.collection('personeller').orderBy("personel_durum", "asc").onSnapshot(snapshot => {
+db.collection("personeller").orderBy("sira", "asc").onSnapshot(snapshot => {
+
   snapshot.docChanges().forEach(change => {
     if(change.type === 'added') {
       renderUser(change.doc);
