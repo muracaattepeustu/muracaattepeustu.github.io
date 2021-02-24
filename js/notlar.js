@@ -17,7 +17,7 @@ let id;
 const renderUser = doc => {
   const tr = `
     <tr data-id='${doc.id}'>
-      <td>${doc.data().not}</td>
+      <td>${doc.data().not_icerik}</td>
       <td style="text-align: center;">${doc.data().not_saati}</td>
       <td>
       <button class="btn btn-edit"><i class="material-icons">create</i></button>
